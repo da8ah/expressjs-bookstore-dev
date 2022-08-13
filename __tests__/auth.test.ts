@@ -52,8 +52,8 @@ describe("Test SignUp and SignIn data", () => {
     describe("auth with new user", () => {
         afterAll(async () => {
             try {
-                const conn = await MongoClient.connect(`mongodb://${config.MONGO_HOST}`);
-                conn.db(config.MONGO_DATABASE)
+                const conn = await MongoClient.connect(config.MONGO_URI);
+                conn.db(config.MONGO_URI)
                     .collection("users")
                     .findOneAndDelete({ email: "abcde@mail.com" });
 
