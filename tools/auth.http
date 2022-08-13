@@ -1,0 +1,21 @@
+###
+@port = 5000
+@api = http://localhost:{{port}}
+
+### SIGNUP - CREATE USER
+POST {{api}}/signup
+Content-Type: application/json
+
+{
+  "email": "tiber@email.com",
+  "password": "tiber"
+}
+
+### SIGNIN - AUTH USER
+POST {{api}}/signin
+Content-Type: application/json
+
+{
+  "email": "tiber@email.com",
+  "password": "tiber"
+}

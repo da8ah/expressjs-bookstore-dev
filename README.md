@@ -1,1 +1,1 @@
-# expressjs-bookstore-dev
+# expressjs-bookstore

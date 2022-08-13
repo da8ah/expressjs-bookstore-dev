@@ -1,0 +1,33 @@
+###
+@port = 5000
+@api = http://localhost:{{port}}/api/books
+
+### CREATE BOOK
+POST {{api}}
+Content-Type: application/json
+
+{
+  "isbn": "9780141988511",
+  "author": "Peterson, Jordan B.",
+  "title": "12 Rules for Life: An Antidote to Chaos"
+}
+
+### GET ALL BOOKS
+GET {{api}}
+
+###
+@isbn = 9780141988511
+
+### GET BOOK
+GET {{api}}/{{isbn}}  
+
+### UPDATE BOOK
+PUT {{api}}/{{isbn}}
+Content-Type: application/json
+
+{
+  "description": "THE MULTI-MILLION COPY BESTSELLER"
+}
+
+### DELETE BOOK
+DELETE {{api}}/{{isbn}}

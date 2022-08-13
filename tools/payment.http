@@ -1,0 +1,26 @@
+###
+@port = 5000
+@api = http://localhost:{{port}}
+
+###
+@token = 
+
+### USER AUTHed - CART ACCESS
+GET {{api}}/payment
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### USER AUTHed - PAYMENT
+POST {{api}}/payment/checkout
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "",
+  "email": "",
+  "amount": 3000,
+  "paymentMethodType": "card",
+  "cardNumber": "424242",
+  "cardExpiry": "",
+  "cardCvc": ""
+}
